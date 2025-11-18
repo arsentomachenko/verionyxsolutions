@@ -1,0 +1,32 @@
+@use 'custom';
+
+// IMPORT THE COMPONENTS 
+@use 'components/animations';
+@use 'components/buttons';
+@use 'components/mixins';
+@use 'components/typography';
+
+
+// IMPORT THE SECTIONS 
+@use 'sections/navbar';
+@use 'sections/intro-section';
+@use 'sections/campanies';
+@use 'sections/services';
+@use 'sections/testimonials';
+@use 'sections/faq';
+@use 'sections/portfolio';
+@use 'sections/get-started';
+@use 'sections/footer';
+
+// Import FontAwesome
+@import '@fortawesome/fontawesome-free/scss/fontawesome';
+@import '@fortawesome/fontawesome-free/scss/solid';
+@import '@fortawesome/fontawesome-free/scss/brands';
+@import '@fortawesome/fontawesome-free/scss/regular';
+
+// Import GLightbox CSS (loaded via CDN in layout.tsx)
+// @import 'glightbox/dist/css/glightbox.css';
+
+// Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
