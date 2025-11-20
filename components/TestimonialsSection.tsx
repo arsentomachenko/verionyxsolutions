@@ -87,7 +87,7 @@ export default function TestimonialsSection() {
                 </div>
               ))}
             </div>
-            <div className="text-center">
+            <div className="text-center d-flex justify-content-center gap-3">
               <button 
                 className="btn btn-outline-light fas fa-long-arrow-alt-left" 
                 type="button" 

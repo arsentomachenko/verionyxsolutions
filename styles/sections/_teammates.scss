@@ -1,0 +1,100 @@
+@use '../custom' as *;
+
+.teammates {
+    position: relative;
+    padding: 5rem 0;
+    background-color: #f8f9fa;
+
+    &__card {
+        background-color: $white;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        &:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+        }
+    }
+
+    &__image {
+        width: 100%;
+        overflow: hidden;
+        background-color: $white;
+        
+        img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+    }
+
+    &__content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem !important;
+
+        @include media-breakpoint-up(lg) {
+            padding: 1.25rem !important;
+        }
+    }
+
+    &__name {
+        font-size: 1.1rem;
+        color: $dark;
+        margin-bottom: 0.25rem;
+
+        @include media-breakpoint-up(lg) {
+            font-size: 1.25rem;
+        }
+    }
+
+    &__title {
+        font-size: 0.75rem;
+        line-height: 1.3;
+        margin-bottom: 0.5rem;
+
+        @include media-breakpoint-up(lg) {
+            font-size: 0.85rem;
+        }
+    }
+
+    &__description {
+        font-size: 0.75rem;
+        color: $dark;
+        margin-bottom: 1rem;
+        flex: 1;
+        line-height: 1.4;
+
+        @include media-breakpoint-up(lg) {
+            font-size: 0.85rem;
+        }
+    }
+
+    &__social {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    &__social-link {
+        color: $primary;
+        font-size: 1.25rem;
+        transition: color 0.3s ease, transform 0.3s ease;
+
+        &:hover {
+            color: darken($primary, 10%);
+            transform: scale(1.2);
+        }
+
+        i {
+            display: inline-block;
+        }
+    }
+}
+

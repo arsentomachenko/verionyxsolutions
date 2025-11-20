@@ -3,8 +3,8 @@ import '../styles/globals.scss'
 import Script from 'next/script'
 
 export const metadata: Metadata = {
-  title: 'Patrix | Portfolio',
-  description: 'Portfolio website built with Next.js',
+  title: 'verionyxsolutions.com',
+  description: 'Portfolio website of verionyxsolutions',
 }
 
 export default function RootLayout({

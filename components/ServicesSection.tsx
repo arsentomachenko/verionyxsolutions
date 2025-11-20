@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 const services = [
   {
@@ -72,10 +73,35 @@ export default function ServicesSection() {
                     <div className={`icon d-block fas ${service.icon}`}></div>
                     <h3 className="display-3--title mt-1">{service.title}</h3>
                     <p className="lh-lg">{service.description}</p>
-                    <button type="button" className="rounded-pill btn-rounded border-primary">
-                      Learn more
-                      <span><i className="fas fa-arrow-right"></i></span>
-                    </button>
+                    {service.title === 'Mobile Apps & Web Development' ? (
+                      <Link href="/mobile-apps-web-development" className="rounded-pill btn-rounded border-primary text-decoration-none" style={{ display: 'inline-block' }}>
+                        Learn more
+                        <span style={{ alignItems: "center", verticalAlign: "middle", textAlign: "center" }}>
+                          <i className="fas fa-arrow-right"></i>
+                        </span>
+                      </Link>
+                    ) : service.title === 'DevOps Services' ? (
+                      <Link href="/devops-services" className="rounded-pill btn-rounded border-primary text-decoration-none" style={{ display: 'inline-block' }}>
+                        Learn more
+                        <span style={{ alignItems: "center", verticalAlign: "middle", textAlign: "center" }}>
+                          <i className="fas fa-arrow-right"></i>
+                        </span>
+                      </Link>
+                    ) : service.title === 'Financial & Business Consulting' ? (
+                      <Link href="/financial-business-consulting" className="rounded-pill btn-rounded border-primary text-decoration-none" style={{ display: 'inline-block' }}>
+                        Learn more
+                        <span style={{ alignItems: "center", verticalAlign: "middle", textAlign: "center" }}>
+                          <i className="fas fa-arrow-right"></i>
+                        </span>
+                      </Link>
+                    ) : (
+                      <button type="button" className="rounded-pill btn-rounded border-primary">
+                        Learn more
+                        <span style={{ alignItems: "center", verticalAlign: "middle", textAlign: "center" }}>
+                          <i className="fas fa-arrow-right"></i>
+                        </span>
+                      </button>
+                    )}
                   </div>
                 </div>
               </>
@@ -86,10 +112,35 @@ export default function ServicesSection() {
                     <div className={`icon d-block fas ${service.icon}`}></div>
                     <h3 className="display-3--title mt-1">{service.title}</h3>
                     <p className="lh-lg">{service.description}</p>
-                    <button type="button" className="rounded-pill btn-rounded border-primary">
-                      Learn more
-                      <span><i className="fas fa-arrow-right"></i></span>
-                    </button>
+                    {service.title === 'Mobile Apps & Web Development' ? (
+                      <Link href="/mobile-apps-web-development" className="rounded-pill btn-rounded border-primary text-decoration-none" style={{ display: 'inline-block' }}>
+                        Learn more
+                        <span style={{ alignItems: "center", verticalAlign: "middle", textAlign: "center" }}>
+                          <i className="fas fa-arrow-right"></i>
+                        </span>
+                      </Link>
+                    ) : service.title === 'DevOps Services' ? (
+                      <Link href="/devops-services" className="rounded-pill btn-rounded border-primary text-decoration-none" style={{ display: 'inline-block' }}>
+                        Learn more
+                        <span style={{ alignItems: "center", verticalAlign: "middle", textAlign: "center" }}>
+                          <i className="fas fa-arrow-right"></i>
+                        </span>
+                      </Link>
+                    ) : service.title === 'Financial & Business Consulting' ? (
+                      <Link href="/financial-business-consulting" className="rounded-pill btn-rounded border-primary text-decoration-none" style={{ display: 'inline-block' }}>
+                        Learn more
+                        <span style={{ alignItems: "center", verticalAlign: "middle", textAlign: "center" }}>
+                          <i className="fas fa-arrow-right"></i>
+                        </span>
+                      </Link>
+                    ) : (
+                      <button type="button" className="rounded-pill btn-rounded border-primary">
+                        Learn more
+                        <span style={{ alignItems: "center", verticalAlign: "middle", textAlign: "center" }}>
+                          <i className="fas fa-arrow-right"></i>
+                        </span>
+                      </button>
+                    )}
                   </div>
                 </div>
                 <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4 text-end">
