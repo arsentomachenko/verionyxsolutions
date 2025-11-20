@@ -11,8 +11,7 @@ export default function Navbar() {
     <nav className="navbar navbar-expand-lg navbar-dark menu shadow fixed-top">
       <div className="container">
         <Link className="navbar-brand d-flex align-items-center" href="/">
-          <Image src="/images/logo.png" alt="logo image" width={50} height={50} style={{ width: 'auto', height: 'auto' }} />
-          <span className="ms-2 text-white fw-bold fs-2">ERIONYX</span>
+          <Image src="/images/logo_white.svg" alt="logo image" width={200} height={200} style={{ width: 'auto', height: '80px', maxWidth: '100%' }} />
         </Link>
         <button 
           className="navbar-toggler" 

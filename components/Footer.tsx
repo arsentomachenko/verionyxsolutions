@@ -16,14 +16,13 @@ export default function Footer() {
           <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
             <div className="d-flex align-items-center mb-3">
               <Image 
-                src="/images/logo.png" 
+                src="/images/logo_white.svg" 
                 alt="Verionyxsolutions Logo" 
-                width={200}
-                height={60}
-                style={{ width: 'auto', height: '60px', maxWidth: '100%' }}
+                width={250}
+                height={80}
+                style={{ width: 'auto', height: '80px', maxWidth: '100%' }}
                 priority
               />
-              <h5 className="text-uppercase fw-bold mb-0 ms-2">ERIONYX</h5>
             </div>
             <hr className="bg-white mb-4" style={{ width: '60px', height: '2px', opacity: 1 }} />
             <p className="lh-lg mb-4">

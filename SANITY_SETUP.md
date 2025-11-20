@@ -129,3 +129,4 @@ export default {
 
 If no projects are found in Sanity, the component will fall back to displaying 9 default placeholder projects using local images from `/public/images/portfolio/`.
 
+

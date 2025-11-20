@@ -1,60 +1,83 @@
-import Image from 'next/image'
+import TeammatesCarousel from './TeammatesCarousel'
 
-const teammates = [
-  {
-    name: 'Muhammad Rafeeq',
-    title: 'Founder & Sr. Financial Advisor',
-    image: '1.jpg',
-    description: 'As the visionary founder of Verionyx Solutions, Muhammad Rafeeq brings over a decade of experience in the financial sector. He specializes in strategic financial planning and business consulting, helping organizations optimize their financial health. His industry knowledge and client-first approach have been instrumental in building trusted relationships with clients across various industries.',
-    socialMedia: [
-      { platform: 'linkedin', url: '#' },
-    ],
-  },
-  {
-    name: 'Hafeez Rana',
-    title: 'Software Engineer',
-    image: '2.jpg',
-    description: 'Hafeez Rana is a Co-Founder and expert Software Engineer specializing in high-performance Flutter app development. With a passion for building scalable, user-focused mobile applications, he has successfully led over 10 global client projects, delivering solutions that exceed expectations and drive business growth.',
-    socialMedia: [
-      { platform: 'facebook', url: '#' },
-      { platform: 'twitter', url: '#' },
-      { platform: 'linkedin', url: '#' },
-      { platform: 'instagram', url: '#' },
-      { platform: 'youtube', url: '#' },
-    ],
-  },
-  {
-    name: 'Abdullah Al Mahmud',
-    title: 'Software Engineer',
-    image: '3.png',
-    description: 'Abdullah Al Mahmud is a passionate Software Engineer at Verionyx Solutions, specializing in the Dart ecosystem. His expertise lies in building high-performance, cross-platform applications using Flutter, and he brings a strong background in creating modern web solutions with frameworks like Jaspr. His innovative approach to development consistently delivers exceptional user experiences.',
-    socialMedia: [
-      { platform: 'twitter', url: '#' },
-    ],
-  },
-  {
-    name: 'Muhammad Bilal',
-    title: 'Finance & Accounting Consultant | Record to Report | Taxation | Financial Statements | Accounting Systems Implementation',
-    image: '4.jpg',
-    description: 'Muhammad Bilal is an ACCA Member with extensive experience in Record to Report processes, taxation matters, financial statement preparation, and accounting software implementation consultancy. His expertise spans financial management, compliance, and process optimization, making him an invaluable asset for organizations seeking to streamline their accounting operations and ensure regulatory compliance.',
-    socialMedia: [
-      { platform: 'linkedin', url: '#' },
-    ],
-  },
-]
-
-const getSocialIcon = (platform: string) => {
-  const iconMap: { [key: string]: string } = {
-    facebook: 'fab fa-facebook',
-    twitter: 'fab fa-twitter',
-    linkedin: 'fab fa-linkedin',
-    instagram: 'fab fa-instagram',
-    youtube: 'fab fa-youtube',
+interface TeammateData {
+  _id: string
+  name: string
+  summary: string
+  title?: string
+  photo?: {
+    asset: {
+      _ref: string
+      _type: 'reference'
+    }
   }
-  return iconMap[platform] || 'fab fa-link'
+  socialLinks?: {
+    facebook?: string
+    twitter?: string
+    linkedin?: string
+    instagram?: string
+    github?: string
+    youtube?: string
+  }
 }
 
-export default function TeammatesSection() {
+
+export default async function TeammatesSection() {
+  const { getTeammates } = await import('@/lib/teammates')
+  
+  let teammates: TeammateData[] = []
+  try {
+    teammates = await getTeammates()
+  } catch (error) {
+    console.error('Error fetching teammates:', error)
+  }
+
+  // Fallback teammates if Sanity fails or returns empty
+  const fallbackTeammates: TeammateData[] = [
+    {
+      _id: 'fallback-1',
+      name: 'Muhammad Rafeeq',
+      title: 'Founder & Sr. Financial Advisor',
+      summary: 'As the visionary founder of Verionyx Solutions, Muhammad Rafeeq brings over a decade of experience in the financial sector. He specializes in strategic financial planning and business consulting, helping organizations optimize their financial health.',
+      socialLinks: {
+        linkedin: '#'
+      }
+    },
+    {
+      _id: 'fallback-2',
+      name: 'Hafeez Rana',
+      title: 'Software Engineer',
+      summary: 'Hafeez Rana is a Co-Founder and expert Software Engineer specializing in high-performance Flutter app development. With a passion for building scalable, user-focused mobile applications, he has successfully led over 10 global client projects.',
+      socialLinks: {
+        facebook: '#',
+        twitter: '#',
+        linkedin: '#',
+        instagram: '#',
+        youtube: '#'
+      }
+    },
+    {
+      _id: 'fallback-3',
+      name: 'Abdullah Al Mahmud',
+      title: 'Software Engineer',
+      summary: 'Abdullah Al Mahmud is a passionate Software Engineer at Verionyx Solutions, specializing in the Dart ecosystem. His expertise lies in building high-performance, cross-platform applications using Flutter.',
+      socialLinks: {
+        twitter: '#'
+      }
+    },
+    {
+      _id: 'fallback-4',
+      name: 'Muhammad Bilal',
+      title: 'Finance & Accounting Consultant',
+      summary: 'Muhammad Bilal is an ACCA Member with extensive experience in Record to Report processes, taxation matters, financial statement preparation, and accounting software implementation consultancy.',
+      socialLinks: {
+        linkedin: '#'
+      }
+    }
+  ]
+
+  const displayTeammates = teammates.length > 0 ? teammates : fallbackTeammates
+
   return (
     <section id="teammates" className="teammates">
       <div className="container">
@@ -66,42 +89,7 @@ export default function TeammatesSection() {
       </div>
 
       <div className="container mt-5">
-        <div className="row">
-          {teammates.map((teammate, index) => (
-            <div key={index} className="col-lg-3 col-md-6 col-sm-12 mb-4">
-              <div className="teammates__card shadow">
-                <div className="teammates__image">
-                  <Image 
-                    src={`/images/teammates/${teammate.image}`} 
-                    alt={`${teammate.name} picture`} 
-                    className="img-fluid"
-                    width={300}
-                    height={300}
-                    style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
-                  />
-                </div>
-                <div className="teammates__content">
-                  <h3 className="teammates__name fw-bold">{teammate.name}</h3>
-                  <p className="teammates__title text-muted">{teammate.title}</p>
-                  <p className="teammates__description">{teammate.description}</p>
-                  <div className="teammates__social">
-                    {teammate.socialMedia.map((social, idx) => (
-                      <a 
-                        key={idx}
-                        href={social.url} 
-                        className="teammates__social-link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <i className={getSocialIcon(social.platform)}></i>
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+        <TeammatesCarousel teammates={displayTeammates} />
       </div>
     </section>
   )
