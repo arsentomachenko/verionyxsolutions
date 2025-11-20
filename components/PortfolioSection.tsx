@@ -39,12 +39,13 @@ export default async function PortfolioSection() {
     }
   })
 
-  const portfolioItems = sanityItems.length > 0 ? sanityItems : DEFAULT_PORTFOLIO_ITEMS
-
-  // Unique categories for filter buttons
-  const categories = sanityItems.length > 0
-    ? ['All', ...Array.from(new Set(sanityItems.map((item) => item.category).filter(Boolean)))]
-    : ['All', 'websites', 'design', 'mockup']
+  // Show only top 3 featured projects on homepage
+  const featuredCount = 3
+  const featuredItems = sanityItems.length > 0 
+    ? sanityItems.slice(0, featuredCount)
+    : DEFAULT_PORTFOLIO_ITEMS.slice(0, featuredCount)
+  
+  const hasMoreProjects = sanityItems.length > featuredCount
 
   return (
     <section id="portfolio" className="portfolio">
@@ -53,22 +54,8 @@ export default async function PortfolioSection() {
           <h1 className="display-3 fw-bold text-capitalize">Latest work</h1>
           <div className="heading-line"></div>
         </div>
-        <div className="row mt-5 mb-4 g-3 text-center">
-          <div className="col-md-12 d-flex justify-content-center gap-3">
-            {categories.map((category) => (
-              <button 
-                key={category} 
-                className="btn btn-outline-primary" 
-                type="button"
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-        </div>
-
         <div className="row">
-          {portfolioItems.map((item) => {
+          {featuredItems.map((item) => {
             const cardBody = (
               <>
                 <div className="portfolio-box shadow">
@@ -117,6 +104,17 @@ export default async function PortfolioSection() {
             )
           })}
         </div>
+
+        {hasMoreProjects && (
+          <div className="row mt-5">
+            <div className="col-12 text-center">
+              <Link href="/portfolio" className="btn btn-primary rounded-pill btn-rounded" style={{ display: 'inline-block' }}>
+                Explore More
+                <span><i className="fas fa-arrow-right"></i></span>
+              </Link>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   )

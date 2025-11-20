@@ -1,4 +1,4 @@
-@use 'custom';
+@use 'custom' as *;
 
 // IMPORT THE COMPONENTS 
 @use 'components/animations';
@@ -18,6 +18,97 @@
 @use 'sections/portfolio';
 @use 'sections/get-started';
 @use 'sections/footer';
+
+// GLOBAL DARK BACKGROUND
+html,
+body {
+  background-color: #1a1a2e;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+body {
+  background-color: #1a1a2e;
+}
+
+// Ensure all main sections have dark background
+main {
+  background-color: #1a1a2e;
+  color: #ffffff;
+}
+
+// Update white backgrounds to dark
+.bg-white {
+  background-color: #2a2a3e !important;
+  color: #ffffff;
+}
+
+// Update text colors for dark background
+.text-dark {
+  color: #ffffff !important;
+}
+
+.text-muted {
+  color: #b0b0b0 !important;
+}
+
+// Service pages and project detail pages
+.services-page,
+.project-detail {
+  background-color: #1a1a2e;
+  color: #ffffff;
+}
+
+// Card backgrounds
+.card {
+  background-color: #2a2a3e !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff;
+  
+  .card-title,
+  .card-text {
+    color: #ffffff;
+  }
+}
+
+// Form inputs on dark background
+.form-control {
+  background-color: #2a2a3e;
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  
+  &::placeholder {
+    color: #b0b0b0;
+  }
+  
+  &:focus {
+    background-color: #2a2a3e;
+    border-color: #3a5bc6;
+    color: #ffffff;
+  }
+}
+
+textarea.form-control {
+  background-color: #2a2a3e;
+  color: #ffffff;
+}
+
+// Border colors for dark theme
+.border-right {
+  border-right-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+// Portfolio section
+.portfolio {
+  background-color: #1a1a2e;
+  color: #ffffff;
+}
+
+// Services section
+.services {
+  background-color: #1a1a2e;
+  color: #ffffff;
+}
 
 // Import FontAwesome
 @import '@fortawesome/fontawesome-free/scss/fontawesome';

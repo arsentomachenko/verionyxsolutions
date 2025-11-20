@@ -27,7 +27,7 @@ export default function GetStartedSection() {
               </ul>
             </div>
           </div>
-          <div className="col-12 col-lg-6 bg-white shadow p-3">
+          <div className="col-12 col-lg-6 bg-white shadow p-3 text-white">
             <div className="form w-100 pb-2">
               <h4 className="display-3--title mb-5">start your project</h4>
               <form action="#" className="row">

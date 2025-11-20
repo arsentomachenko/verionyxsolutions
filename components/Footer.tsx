@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -9,93 +10,92 @@ export default function Footer() {
 
   return (
     <footer className="footer">
-      <div className="container">
-        <div className="row">
-          <div className="col-md-4 col-lg-4 contact-box pt-1 d-md-block d-lg-flex d-flex">
-            <div className="contact-box__icon">
-              <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-phone-call" viewBox="0 0 24 24" strokeWidth="1" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
-                <path d="M15 7a2 2 0 0 1 2 2" />
-                <path d="M15 3a6 6 0 0 1 6 6" />
-              </svg>
+      <div className="container py-5">
+        <div className="row text-white">
+          {/* Left Column - Company Information */}
+          <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
+            <div className="d-flex align-items-center mb-3">
+              <Image 
+                src="/images/logo.png" 
+                alt="Verionyxsolutions Logo" 
+                width={200}
+                height={60}
+                style={{ width: 'auto', height: '60px', maxWidth: '100%' }}
+                priority
+              />
+              <h5 className="text-uppercase fw-bold mb-0 ms-2">ERIONYX</h5>
             </div>
-            <div className="contact-box__info">
-              <a href="#" className="contact-box__info--title">+971561414738</a>
-              <p className="contact-box__info--subtitle">  Mon-Fri 9am-6pm</p>
-            </div>
-          </div>
-          <div className="col-md-4 col-lg-4 contact-box pt-1 d-md-block d-lg-flex d-flex">
-            <div className="contact-box__icon">
-              <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-mail-opened" viewBox="0 0 24 24" strokeWidth="1" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <polyline points="3 9 12 15 21 9 12 3 3 9" />
-                <path d="M21 9v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" />
-                <line x1="3" y1="19" x2="9" y2="13" />
-                <line x1="15" y1="13" x2="21" y2="19" />
-              </svg>
-            </div>
-            <div className="contact-box__info">
-              <a href="#" className="contact-box__info--title">info@verionyxsolutions.com</a>
-              <p className="contact-box__info--subtitle">Online support</p>
-            </div>
-          </div>
-          <div className="col-md-4 col-lg-4 contact-box pt-1 d-md-block d-lg-flex d-flex">
-            <div className="contact-box__icon">
-              <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-map-2" viewBox="0 0 24 24" strokeWidth="1" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <line x1="18" y1="6" x2="18" y2="6.01" />
-                <path d="M18 13l-3.5 -5a4 4 0 1 1 7 0l-3.5 5" />
-                <polyline points="10.5 4.75 9 4 3 7 3 20 9 17 15 20 21 17 21 15" />
-                <line x1="9" y1="4" x2="9" y2="17" />
-                <line x1="15" y1="15" x2="15" y2="20" />
-              </svg>
-            </div>
-            <div className="contact-box__info">
-              <a href="#" className="contact-box__info--title">Sharjah Media City, Shams Free Zone, UAE</a>
-              <p className="contact-box__info--subtitle">Location</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="footer-sm" style={{ backgroundColor: '#212121' }}>
-        <div className="container">
-          <div className="row py-4 text-center text-white">
-            <div className="col-lg-5 col-md-6 mb-4 mb-md-0">
-              connect with us on social media
-            </div>
-            <div className="col-lg-7 col-md-6">
-              <a href="#"><i className="fab fa-facebook"></i></a>
-              <a href="#"><i className="fab fa-twitter"></i></a>
-              <a href="#"><i className="fab fa-github"></i></a>
-              <a href="#"><i className="fab fa-linkedin"></i></a>
-              <a href="#"><i className="fab fa-instagram"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="container mt-5">
-        <div className="row text-white justify-content-center mt-3 pb-3">
-          <div className="col-12 col-sm-6 col-lg-6 mx-auto">
-            <h5 className="text-capitalize fw-bold">Verionyxsolutions</h5>
-            <hr className="bg-white d-inline-block mb-4" style={{ width: '60px', height: '2px' }} />
-            <p className="lh-lg">
-              
-									Driven by discipline and innovation, we deliver quality and trusted solutions. We celebrate diversity and foster equality beyond gender, culture, and region.								
+            <hr className="bg-white mb-4" style={{ width: '60px', height: '2px', opacity: 1 }} />
+            <p className="lh-lg mb-4">
+              Driven by discipline and innovation, we deliver quality and trusted solutions. We celebrate diversity and foster equality beyond gender, culture, and region.
             </p>
+            <div className="d-flex gap-3">
+              <a href="#" className="social-icon">
+                <i className="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" className="social-icon">
+                <i className="fab fa-x-twitter"></i>
+              </a>
+              <a href="#" className="social-icon">
+                <i className="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" className="social-icon">
+                <i className="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+
+          {/* Middle Column - Important Links */}
+          <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
+            <h5 className="fw-bold mb-4">Important Links</h5>
+            <ul className="list-unstyled">
+              <li className="mb-3">
+                <Link href="/#about" className="text-white text-decoration-none">About Us</Link>
+              </li>
+              <li className="mb-3">
+                <Link href="/#services" className="text-white text-decoration-none">Our Services</Link>
+              </li>
+              <li className="mb-3">
+                <Link href="/#news" className="text-white text-decoration-none">News & Blog</Link>
+              </li>
+              <li className="mb-3">
+                <Link href="/#contact" className="text-white text-decoration-none">Contact Us</Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Right Column - Get In Touch */}
+          <div className="col-lg-4 col-md-12">
+            <h5 className="fw-bold mb-4">Get In Touch</h5>
+            <ul className="list-unstyled">
+              <li className="mb-3 d-flex align-items-start">
+                <i className="fas fa-map-marker-alt me-3 mt-1"></i>
+                <span>Sharjah Media City, Shams Free Zone, UAE</span>
+              </li>
+              <li className="mb-3 d-flex align-items-center">
+                <i className="fas fa-phone me-3"></i>
+                <a href="tel:+971561414738" className="text-white text-decoration-none">+971561414738</a>
+              </li>
+              <li className="mb-3 d-flex align-items-center">
+                <i className="fas fa-envelope me-3"></i>
+                <a href="mailto:info@verionyxsolutions.com" className="text-white text-decoration-none">info@verionyxsolutions.com</a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
 
-      <div className="footer-bottom pt-5 pb-5">
-        <div className="container">
-          <div className="row text-center text-white">
-            <div className="col-12">
-              <div className="footer-bottom__copyright">
-                &COPY; Copyright 2025 <Link href="#">Patrix</Link> | Designed by <a href="http://debugginghuman.com" target="_blank" rel="noopener noreferrer">DebuggingHuman</a>
-              </div>
+      {/* Bottom Section - Copyright and Legal */}
+      <div className="border-top border-secondary" style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
+        <div className="container py-4">
+          <div className="row text-white align-items-center">
+            <div className="col-md-6 mb-3 mb-md-0">
+              <p className="mb-0 small">©2025 Verionyx Solutions LLC | All rights reserved.</p>
+            </div>
+            <div className="col-md-6 text-md-end">
+              <Link href="/privacy" className="text-white text-decoration-none me-3 small">Privacy</Link>
+              <span className="text-white-50 me-3">|</span>
+              <Link href="/terms" className="text-white text-decoration-none small">Terms & Condition</Link>
             </div>
           </div>
         </div>

@@ -3,10 +3,10 @@
 .teammates {
     position: relative;
     padding: 5rem 0;
-    background-color: #f8f9fa;
+    background-color: #1a1a2e;
 
     &__card {
-        background-color: $white;
+        background-color: #2a2a3e;
         border-radius: 10px;
         overflow: hidden;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -23,7 +23,7 @@
     &__image {
         width: 100%;
         overflow: hidden;
-        background-color: $white;
+        background-color: #2a2a3e;
         
         img {
             width: 100%;
@@ -46,7 +46,7 @@
 
     &__name {
         font-size: 1.1rem;
-        color: $dark;
+        color: $white;
         margin-bottom: 0.25rem;
 
         @include media-breakpoint-up(lg) {
@@ -58,6 +58,7 @@
         font-size: 0.75rem;
         line-height: 1.3;
         margin-bottom: 0.5rem;
+        color: rgba($white, 0.7);
 
         @include media-breakpoint-up(lg) {
             font-size: 0.85rem;
@@ -66,7 +67,7 @@
 
     &__description {
         font-size: 0.75rem;
-        color: $dark;
+        color: rgba($white, 0.8);
         margin-bottom: 1rem;
         flex: 1;
         line-height: 1.4;

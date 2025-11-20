@@ -57,7 +57,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
               </div>
             </div>
             <div className="col-lg-5">
-              <div className="bg-white shadow-sm p-4 rounded-3 h-100">
+              <div className="bg-white shadow-sm p-4 rounded-3 h-100 text-white">
                 <h2 className="h4 fw-bold mb-3">About this project</h2>
                 {project.description ? (
                   <p className="lh-lg">{project.description}</p>

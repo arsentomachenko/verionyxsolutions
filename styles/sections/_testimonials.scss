@@ -7,11 +7,16 @@
     @include gradient;
 
     &__card {
-        background-color: rgba($white, 0.8);
+        background-color: rgba(42, 42, 62, 0.9);
         padding: 2rem 1.25rem;
         border-radius: 0.625rem;
         height: auto;
         text-align: center;
+        color: $white;
+
+        p {
+            color: $white;
+        }
 
         i {
             font-size: 1.5rem;
